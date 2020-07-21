@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <include name="aosp-p9.0.0_1.0.0-ga-alternate-cn.xml"/>
+
+  <include name="maaxboard-p9.0.0_1.0.0-ga.xml"/>
+
+</manifest>
