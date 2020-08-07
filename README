@@ -27,7 +27,7 @@ $ source build/envsetup.sh
 
 - Execute the Android lunch command.
 lunch command can be issued with an argument <Build name>-<Build type> or can be issued without the argument presenting a menu of selection.
-$ lunch em_sbc_imx8m-userdebug
+$ lunch maaxboard_mini-userdebug
 Check Android User's Guide for more details
 
 - Execute the make command to generate the image.
