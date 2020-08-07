@@ -1,0 +1,36 @@
+Embest Android BSP Repo Manifest README
+
+This repo is used to download manifests for Embest android BSP which based on NXP i.MX Android BSP releases.
+
+To use this manifest repo, the 'repo' tool must be installed first.
+--------------------------------------------------------
+$: mkdir ~/bin
+$: curl https://storage.googleapis.com/git-repo-downloads/repo  > ~/bin/repo
+$: chmod a+x ~/bin/repo
+$: export PATH=${PATH}:~/bin
+
+Get the whole Android source code project:
+--------------------------------------------------------
+$ mkdir android_maaxboard
+$ cd android_maaxboard
+$ repo init -u http://192.168.2.149/imx8m/imx-manifest.git -b maaxboard_mini_android-pie -m embest-android-p9.0.0.xml
+$ repo sync -v
+
+If you cannot access to https://android.googlesource.com, please try to use the alternate manifest:
+$ repo init -u http://192.168.2.149/imx8m/imx-manifest.git -b maaxboard_mini_android-pie -m embest-android-p9.0.0-alternate-cn.xml
+
+
+Setup build environment:
+--------------------------------------------------------
+- Set up the environment for building. This only configures the current terminal.
+$ source build/envsetup.sh
+
+- Execute the Android lunch command.
+lunch command can be issued with an argument <Build name>-<Build type> or can be issued without the argument presenting a menu of selection.
+$ lunch em_sbc_imx8m-userdebug
+Check Android User's Guide for more details
+
+- Execute the make command to generate the image.
+$ make 2>&1 | tee build-log.txt
+When the make command is complete, the build-log.txt file contains the execution output. Check for any errors.
+
